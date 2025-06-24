@@ -15,6 +15,7 @@ loader = CSVLoader(os.path.join(file_dir ,'./data/about.csv'),
 # print(loader.load())
 
 # 2.加载其他类型文档
+# pip install pymupdf
 from langchain.document_loaders import TextLoader, PyMuPDFLoader
 
 loader = PyMuPDFLoader(os.path.join(file_dir ,'./data/about.pdf'),

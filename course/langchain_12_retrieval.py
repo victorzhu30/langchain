@@ -10,9 +10,7 @@ llm = ChatOpenAI(model_name="moonshot-v1-8k")
 from langchain.document_loaders import PyMuPDFLoader
 import os
 file_dir = os.path.dirname(__file__)
-loader = PyMuPDFLoader(os.path.join(file_dir ,'./data/about.pdf'),
-                        # encoding='utf-8'  # <--- 关键就在这一行！
-                        )
+loader = PyMuPDFLoader(os.path.join(file_dir ,'./data/about.pdf'))
 
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 text_splitter = RecursiveCharacterTextSplitter(
@@ -37,5 +35,5 @@ chain = load_qa_chain(llm=llm, chain_type='stuff', verbose=True)
 result = chain.run(input_documents = retrieval_documents, question = question)
 print(result)
 
-# 基于文档检索问答的功能就讲完了，但是还存在一个小问题，就是每次提交问题，都需要重新加载文档，然后向量化，这个流程是不太合理的。
-# 所以下节课我们讲，把向量化之后的文档缓存下来，这样就不用每次都重新加载了。
+# 基于文档检索问答的功能就讲完了，但是还存在一个小问题，就是每次提交问题都需要重新加载文档然后向量化，这个流程是不太合理的。
+# 所以下节课我们讲把向量化之后的文档缓存下来，这样就不用每次都重新加载了。
