@@ -1,1 +1,1 @@
-# langchain
+基于LangChain和知识图谱的大模型医疗问答机器人项目
