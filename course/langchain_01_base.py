@@ -4,7 +4,8 @@ load_dotenv()
 from langchain.chat_models import ChatOpenAI
 
 llm = ChatOpenAI(
-    openai_api_base="https://api.moonshot.cn/v1/", 
+    # openai_api_base="https://api.moonshot.cn/v1/", 
+    openai_api_base="https://api-sg.moonshot.ai/v1/", 
     openai_api_key="sk-86coYfOVUSazPvNod5hWbx6BCOBZKMHfu2S0RWWwe6QxiVfM",
     model_name="moonshot-v1-8k",
 )
